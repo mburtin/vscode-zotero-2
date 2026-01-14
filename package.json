@@ -2,26 +2,33 @@
     "name": "zotero",
     "displayName": "Citation Picker for Zotero",
     "description": "Zotero Better Bibtex citation picker for VS Code",
-    "version": "0.1.11",
+    "version": "0.2.0",
     "publisher": "mblode",
     "author": {
         "name": "Matthew Blode",
         "email": "m@blode.co",
         "url": "https://matthewblode.com"
     },
+    "contributors": [
+    {
+        "name" : "Matti Vuorre",
+        "email" : "mjvuorre@uvt.nl",
+        "url" : "https://vuorre.com"
+    }
+    ],
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "lint": "eslint src --ext ts"
     },
-    "homepage": "https://github.com/mblode/vscode-zotero",
+    "homepage": "https://github.com/mvuorre/vscode-zotero",
     "bugs": {
-        "url": "https://github.com/mblode/vscode-zotero/issues"
+        "url": "https://github.com/mvuorre/vscode-zotero/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/mblode/vscode-zotero.git"
+        "url": "https://github.com/mvuorre/vscode-zotero.git"
     },
     "icon": "images/icon.png",
     "engines": {
@@ -76,6 +83,13 @@
                     "type": "string",
                     "default": "http://127.0.0.1:23119/better-bibtex/cayw?format=pandoc",
                     "description": "Customise what port/URL will be used for the picker."
+                },
+                "zotero-citation-picker.citeMethod": {
+                    "type": "string",
+                    "enum": ["zotero", "vscode"],
+                    "enumDescriptions": ["Use the Zotero Cite as you Write popup", "Use a picker within VS Code"],
+                    "default": "vscode",
+                    "markdownDescription": "Controls how Zotero citations are chosen"
                 }
             }
         }
